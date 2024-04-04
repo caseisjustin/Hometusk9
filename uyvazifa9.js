@@ -132,6 +132,23 @@
 
 function closeNumber(arr){
     function check(m){
-        
+        let min = m
+        let temp = 0
+        let res = 0
+        for(let i = 0; i < arr.length; i++){
+            if(m > arr[i]){
+                temp = m - arr[i]
+            }else{
+                temp = arr[i] - m
+            }
+            if(temp < min){
+                min = temp
+                res = arr[i]
+            }
+        }
+        return res
     }
+    return check
 }
+
+console.log(closeNumber([1,12,32,2,10,5,4])(30))
