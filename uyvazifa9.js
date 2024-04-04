@@ -164,62 +164,70 @@
 
 // bonus
 
-const magic = {
-    replace(a, b){
-        return [b, a]
-    },
-    length(data){
-        let count = 0
-        let temp = data.split("")
-        for (const key in temp) {
-            count++
-        }
-        return count
-    },
-    toUpperCase(str){
-        let temp = ""
-        for(let i = 0; i < this.length(str); i++){
-            if(str[i].charCodeAt() > 90 || " "){
-                if(str[i] != " ")
-                    temp += ([String.fromCharCode((str[i].charCodeAt())-32)])
-                else{
-                    temp += " "
-                }
-            }
-        }
-        return temp
-    },
-    repeat(data, n){
-        let temp = ""
-        if(typeof data == 'string'){
-            for(let i = n; i > 0; i--){
-                temp += data + " "
-            }
-            return temp
-        }
-        else{
-            temp = []
-            for(let i = 0; i < n; i++){
-                temp.push(data)
-            }
-            return temp
-        }
-    },
-    count(str){
-        let temp = {}
-        temp[str[0]] = 1
-        for(let i = 1; i < this.length(str); i++){
-            for(let j = i+1; j < this.length(str); j++){
-                if(str[j] ){
+// const magic = {
+//     replace(a, b){
+//         return [b, a]
+//     },
+//     length(data){
+//         let count = 0
+//         let temp = data.split("")
+//         for (const key in temp) {
+//             count++
+//         }
+//         return count
+//     },
+//     toUpperCase(str){
+//         let temp = ""
+//         for(let i = 0; i < this.length(str); i++){
+//             if(str[i].charCodeAt() > 90 || " "){
+//                 if(str[i] != " ")
+//                     temp += ([String.fromCharCode((str[i].charCodeAt())-32)])
+//                 else{
+//                     temp += " "
+//                 }
+//             }
+//         }
+//         return temp
+//     },
+//     repeat(data, n){
+//         let temp = ""
+//         if(typeof data == 'string'){
+//             for(let i = n; i > 0; i--){
+//                 temp += data + " "
+//             }
+//             return temp
+//         }
+//         else{
+//             temp = []
+//             for(let i = 0; i < n; i++){
+//                 temp.push(data)
+//             }
+//             return temp
+//         }
+//     },
+//     count(str){
+//         let temp = {}
+//         temp[str[0]] = 1
+//         for(let j = 1; j < this.length(str); j++){
+//             let check = true
+//             for (const key in temp) {
+//                 if(key == str[j]){
+//                     check = false
+//                 }
+//             }
+//             if(check){
+//                 temp[str[j]] = 1
+//             }
+//             else{
+//                 temp[str[j]]++
+//             }
+//         }
+//         return temp
+//     }
+// }
 
-                }
-            }
-        }
-    }
-}
-
-console.log(magic.replace(4, 5))
-console.log(magic.length("helloworld"))
-console.log(magic.toUpperCase("hello world"))
-console.log(magic.repeat("salom", 5))
-// console.log(magic.)
+// console.log(magic.replace(4, 5))
+// console.log(magic.length("helloworld"))
+// console.log(magic.toUpperCase("hello world"))
+// console.log(magic.repeat("salom", 5))
+// console.log(magic.count("helloworld"))
