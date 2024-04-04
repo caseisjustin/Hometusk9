@@ -130,25 +130,96 @@
 
 // 5chi misol
 
-function closeNumber(arr){
-    function check(m){
-        let min = m
-        let temp = 0
-        let res = 0
-        for(let i = 0; i < arr.length; i++){
-            if(m > arr[i]){
-                temp = m - arr[i]
-            }else{
-                temp = arr[i] - m
-            }
-            if(temp < min){
-                min = temp
-                res = arr[i]
+// function closeNumber(arr){
+//     function check(m){
+//         if(m < 0){return "Iltimos 0dan katta son kiriting!"}
+//         let min = m
+//         let temp = 0
+//         let res = 0
+//         for(let i = 0; i < arr.length; i++){
+//             if(m > arr[i]){
+//                 temp = m - arr[i]
+//             }else{
+//                 temp = arr[i] - m
+//             }
+//             if(temp < min){
+//                 min = temp
+//                 res = arr[i]
+//             }
+//         }
+//         return res
+//     }
+//     return check
+// }
+
+// console.log(closeNumber([1,12,32,2,10,5,4])(-30))
+
+
+
+
+
+
+
+
+
+// bonus
+
+const magic = {
+    replace(a, b){
+        return [b, a]
+    },
+    length(data){
+        let count = 0
+        let temp = data.split("")
+        for (const key in temp) {
+            count++
+        }
+        return count
+    },
+    toUpperCase(str){
+        let temp = ""
+        for(let i = 0; i < this.length(str); i++){
+            if(str[i].charCodeAt() > 90 || " "){
+                if(str[i] != " ")
+                    temp += ([String.fromCharCode((str[i].charCodeAt())-32)])
+                else{
+                    temp += " "
+                }
             }
         }
-        return res
+        return temp
+    },
+    repeat(data, n){
+        let temp = ""
+        if(typeof data == 'string'){
+            for(let i = n; i > 0; i--){
+                temp += data + " "
+            }
+            return temp
+        }
+        else{
+            temp = []
+            for(let i = 0; i < n; i++){
+                temp.push(data)
+            }
+            return temp
+        }
+    },
+    count(str){
+        let temp = {}
+        temp[str[0]] = 1
+        for(let i = 1; i < this.length(str); i++){
+            for(let j = i+1; j < this.length(str); j++){
+                if(str[j] ){
+
+                }
+            }
+        }
     }
-    return check
 }
 
-console.log(closeNumber([1,12,32,2,10,5,4])(30))
+console.log(magic.replace(4, 5))
+console.log(magic.length("helloworld"))
+console.log(magic.toUpperCase("hello world"))
+console.log(magic.repeat("salom", 5))
+// console.log(magic.)
